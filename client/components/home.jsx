@@ -222,7 +222,6 @@ class Home extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  // console.log("Home\n", state);
   return state;
 };
 

@@ -21,7 +21,6 @@ class Header extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  // console.log("Header\n", state);
   return state;
 };
 
