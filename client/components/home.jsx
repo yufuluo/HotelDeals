@@ -3,16 +3,16 @@ import { browserHistory } from "react-router";
 import { connect } from "react-redux";
 import Checkbox from 'rc-checkbox';
 import reduce from "../reducers";
-import { validateEmail, validateName, validatePrice } from "../util/validation";
+import validator from "../util/validation";
 
 class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       info: {},
-      error: "",
+      validationError: "",
+      serverError: "",
       showDeals: false,
-      error: "",
       room: "QUEEN",
       language: "en",
       currency: "USD $"
@@ -20,6 +20,14 @@ class Home extends React.Component {
     this.value = {
       chosen: []
     };
+  }
+
+  _isValidInput(data) {
+    return data.firstName &&
+      data.lastName &&
+      data.email &&
+      data.price &&
+      Object.keys(validator.errors).length === 0;
   }
 
   handleChangeRoom(event) {
@@ -50,19 +58,21 @@ class Home extends React.Component {
       currency: this.state.currency
     };
 
-    fetch(`/deal?fn=${data.firstName}&ln=${data.lastName}&email=${data.email}&price=${data.price}&room=${data.room}&lg=${data.language}&cr=${data.currency}`, {
-      method: "GET",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json"
-      }
-    }).then((res) => {
-      return res.json();
-    }).then((info) => {
-      this.setState({info: info, showDeals: true});
-    }).catch((err) => {
-      this.setState({error: err.message || "There's an error in our server, please try again later."});
-    });
+    if (this._isValidInput(data)) {
+      fetch(`/deal?fn=${data.firstName}&ln=${data.lastName}&email=${data.email}&price=${data.price}&room=${data.room}&lg=${data.language}&cr=${data.currency}`, {
+        method: "GET",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json"
+        }
+      }).then((res) => {
+        return res.json();
+      }).then((info) => {
+        this.setState({info: info, showDeals: true});
+      }).catch((err) => {
+        this.setState({serverError: err.message || "There's an error in our server, please try again later."});
+      });
+    }
   }
 
   handleConfirm(event) {
@@ -86,14 +96,14 @@ class Home extends React.Component {
       browserHistory.push("/confirmation");
     })
     .catch((err) => {
-      this.setState({error: err.message || "There's an error in our server, please try again later."});
+      this.setState({serverError: err.message || "There's an error in our server, please try again later."});
     });
   }
 
   _renderInput() {
     return(
       <div>
-          {this.state.error && <h3 className="center warning">{this.state.error}</h3>}
+          {this.state.serverError && <h3 className="center warning">{this.state.serverError}</h3>}
           <div className="choose">
             <select value={this.state.language} onChange={this.handleChangeLang.bind(this)}>
               <option value="en">English</option>
@@ -119,7 +129,7 @@ class Home extends React.Component {
               placeholder="First Name"
               ref="firstName"
               name="firstName"
-              onChange={validateName}
+              onChange={validator.isName}
             />
           </label>
           <label>
@@ -129,7 +139,7 @@ class Home extends React.Component {
               placeholder="Last Name"
               ref="lastName"
               name="lastName"
-              onChange={validateName}
+              onChange={validator.isName}
             />
           </label>
           <label>
@@ -139,7 +149,7 @@ class Home extends React.Component {
               placeholder="email"
               ref="email"
               name="email"
-              onChange={validateEmail}
+              onChange={validator.isEmail}
             />
           </label>
           <label>
@@ -157,7 +167,7 @@ class Home extends React.Component {
               placeholder={this.state.currency}
               ref="price"
               name="price"
-              onChange={validatePrice}
+              onChange={validator.isPrice}
             />
           </label>
           <button type="button" onClick={this.handleSubmit.bind(this)}>{content[this.state.language].submit}!</button>

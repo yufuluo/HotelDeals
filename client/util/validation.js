@@ -1,54 +1,42 @@
 import validator from "validator";
 
-export const validateEmail = (e) => {
-  e.preventDefault();
-  if (!validator.isEmail(e.target.value) || !e.target.value) {
-    e.target.classList.add("invalid_input");
-  } else {
-    e.target.classList.remove("invalid_input");
+const v = {
+
+  errors: {},
+
+  isEmail: (e) => {
+    e.preventDefault();
+    if (!validator.isEmail(e.target.value) || !e.target.value) {
+      e.target.classList.add("invalid_input");
+      v.errors.email = "Email is invalid.";
+    } else {
+      e.target.classList.remove("invalid_input");
+      delete v.errors.email;
+    }
+  },
+
+  isName: (e) => {
+    e.preventDefault();
+    if (!validator.isAlpha(e.target.value) || !e.target.value) {
+      e.target.classList.add("invalid_input");
+      v.errors.name = "Name is invalid.";
+    } else {
+      e.target.classList.remove("invalid_input");
+      delete v.errors.name;
+    }
+  },
+
+  isPrice: (e) => {
+    e.preventDefault();
+    if (!validator.isNumeric(e.target.value) || !e.target.value) {
+      e.target.classList.add("invalid_input");
+      v.errors.price = "Price is invalid.";
+    } else {
+      e.target.classList.remove("invalid_input");
+      delete v.errors.price;
+    }
   }
+
 };
 
-export const validateEmpty = (e) => {
-  e.preventDefault();
-  if (!e.target.value) {
-    e.target.classList.add("invalid_input");
-  } else {
-    e.target.classList.remove("invalid_input");
-  }
-};
-
-export const validateName = (e) => {
-  e.preventDefault();
-  if (!validator.isAlpha(e.target.value) || !e.target.value) {
-    e.target.classList.add("invalid_input");
-  } else {
-    e.target.classList.remove("invalid_input");
-  }
-};
-
-export const validatePrice = (e) => {
-  e.preventDefault();
-  if (!validator.isNumeric(e.target.value) || !e.target.value) {
-    e.target.classList.add("invalid_input");
-  } else {
-    e.target.classList.remove("invalid_input");
-  }
-};
-
-export const validateURL = (e) => {
-  e.preventDefault();
-  if (!validator.isURL(e.target.value) || !e.target.value) {
-    e.target.classList.add("invalid_input");
-  } else {
-    e.target.classList.remove("invalid_input");
-  }
-};
-
-export default {
-  validateEmail,
-  validateEmpty,
-  validateName,
-  validatePrice,
-  validateURL
-};
+export default v;
