@@ -3,18 +3,12 @@
 //
 
 import ReduxRouterEngine from "electrode-redux-router-engine";
-import {routes} from "../../client/routes";
-import {createStore} from "redux";
-import rootReducer from "../../client/reducers";
+import { routes } from "../../client/routes";
+import configureStore from "../../client/store";
 import Promise from "bluebird";
 
 function createReduxStore(req, match) { // eslint-disable-line
-  const initialState = {
-    checkBox: {checked: false},
-    number: {value: 999}
-  };
-
-  const store = createStore(rootReducer, initialState);
+  const store = configureStore({});
   return Promise.resolve(store);
 }
 

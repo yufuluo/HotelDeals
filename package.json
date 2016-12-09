@@ -1,5 +1,5 @@
 {
-  "name": "hotel-deals",
+  "name": "hotel_deals",
   "version": "0.0.1",
   "description": "An app that helps you to find better deals for your booked rooms",
   "homepage": "",
@@ -39,7 +39,9 @@
     "electrode-redux-router-engine": "^1.2.2",
     "electrode-server": "^1.0.0",
     "electrode-static-paths": "^1.0.0",
-    "lodash": "^4.10.1"
+    "lodash": "^4.10.1",
+    "rc-checkbox": "^1.4.3",
+    "validator": "^6.2.0"
   },
   "devDependencies": {
     "electrode-archetype-react-app-dev": "^1.0.0",

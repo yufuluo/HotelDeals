@@ -1,0 +1,23 @@
+{
+  "moreInfo": "¿Podría decirnos algo más sobre su habitación?",
+  "firstName": "Nombre",
+  "lastName": "Apellido",
+  "email": "Email",
+  "room": "Código de habitación reservado",
+  "price": "Precio",
+  "submit": "Enviar",
+  "queen": "REINA",
+  "king": "REY",
+  "suite": "SUITE",
+  "dear": "Querido",
+  "deals": "Tenemos algunos buenos tratos para tu",
+  "room2": "habitación",
+  "only": "SOLAMENTE",
+  "confirm": "Confirmar",
+  "hello": "Hola",
+  "confirmation": "Aquí está tu confirmación de orden.",
+  "selected": "Ha seleccionado la (s) siguiente (s) oferta (s)",
+  "noOffer": "¡Felicitaciones! ¡Ya tienes la mejor oferta! No tenemos ninguna oferta para ti ahora mismo :)",
+  "noOffer2": "Haga clic en \"Confirmar\" para ver la confirmación de su habitación.",
+  "noSelected": "No ha seleccionado ninguna oferta."
+}

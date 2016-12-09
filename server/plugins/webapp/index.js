@@ -33,8 +33,24 @@ function loadAssetsFromStats(statsFilePath) {
     .catch(() => ({}));
 }
 
+function getContent() {
+  const dir = Path.join(__dirname, "../../content/language");
+  const files = fs.readdirSync(dir);
+  const content = {};
+
+  files.forEach((file) => {
+    const key = file.split(".")[0];
+    content[key] = JSON.parse(fs.readFileSync(Path.join(dir, file), "utf8"));
+  });
+
+  return JSON.stringify(content);
+}
+
+const CONTENT = getContent();
+
 function makeRouteHandler(options, userContent) {
   const CONTENT_MARKER = "{{SSR_CONTENT}}";
+  const CONTENT_BUNDLE = "{{CONTENT_BUNDLES}}";
   const BUNDLE_MARKER = "{{WEBAPP_BUNDLES}}";
   const TITLE_MARKER = "{{PAGE_TITLE}}";
   const PREFETCH_MARKER = "{{PREFETCH_BUNDLES}}";
@@ -85,11 +101,17 @@ function makeRouteHandler(options, userContent) {
       return prefetch ? `<script>${prefetch}</script>` : "";
     };
 
+    const loadContent = () => {
+      return `<script>window.content=${CONTENT}</script>`;
+    };
+
     const renderPage = (content) => {
       return html.replace(/{{[A-Z_]*}}/g, (m) => {
         switch (m) {
         case CONTENT_MARKER:
           return content.html || "";
+        case CONTENT_BUNDLE:
+          return loadContent();
         case TITLE_MARKER:
           return options.pageTitle;
         case BUNDLE_MARKER:

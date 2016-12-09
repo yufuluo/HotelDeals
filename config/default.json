@@ -12,7 +12,7 @@
     "webapp": {
       "module": "./server/plugins/webapp",
       "options": {
-        "pageTitle": "hotel_deals",
+        "pageTitle": "Kuma-best hotel deals",
         "paths": {
           "/{args*}": {
             "content": {
@@ -21,6 +21,10 @@
           }
         }
       }
+    },
+    "api": {
+      "module": "./server/plugins/api",
+      "options": {}
     }
   }
 }

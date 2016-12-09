@@ -1,0 +1,23 @@
+{
+  "moreInfo": "Können Sie uns mehr über Ihr Zimmer erzählen?",
+  "firstName": "Vorname",
+  "lastName": "Familienname",
+  "email": "Email",
+  "room": "Gebuchtes Zimmer Code",
+  "price": "Preis",
+  "submit": "Einreichen",
+  "queen": "KÖNIGIN",
+  "king": "KÖNIG",
+  "suite": "SUITE",
+  "dear": "Sehr geehrter",
+  "deals": "Wir haben einige gute Abkommen für Ihr",
+  "room2": "zimmer",
+  "only": "NUR",
+  "confirm": "Bestätigen",
+  "hello": "Hallo",
+  "confirmation": "Hier ist Ihre Auftragsbestätigung.",
+  "selected": "Sie haben folgendes Angebot ausgewählt",
+  "noOffer": "Herzliche Glückwünsche! Sie haben bereits das beste Angebot! Wir haben momentan kein Angebot für Sie :)",
+  "noOffer2": "Bitte klicken Sie auf \"Bestätigen\", um Ihre Zimmerbestätigung anzuzeigen.",
+  "noSelected": "Sie haben kein Angebot ausgewählt."
+}
