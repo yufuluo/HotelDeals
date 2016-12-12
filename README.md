@@ -13,3 +13,7 @@ An app that helps you to find better deals for your booked rooms
 2. `gulp build`
 3. `NODE_ENV=production node server/index.js`
 4. Go to localhost:3000
+
+# Screenshots
+
+https://github.com/yufuluo/HotelDeals/tree/master/screenshots
