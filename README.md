@@ -1,11 +1,6 @@
 # Hotel Deals
 An app that helps you to find better deals for your booked rooms
 
-## Installation
-
-```sh
-$ npm install --save hotel_deals
-```
 # Development
 
 1. `npm install`
