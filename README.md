@@ -1,27 +1,21 @@
-# hotel_deals [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
-> An app that helps you to find better deals for your booked rooms
+# hotel_deals 
+An app that helps you to find better deals for your booked rooms
+Implemented by Qijun Liu
 
 ## Installation
 
 ```sh
 $ npm install --save hotel_deals
 ```
+# Development
 
-## Usage
+1. `npm install`
+2. `gulp dev`
+3. Go to localhost:3000
 
-```js
-var hotelDeals = require('hotel_deals');
+# Production mode
 
-hotelDeals('Rainbow');
-```
-## License
-
-Apache-2.0 © [Kay Lau]()
-
-
-[npm-image]: https://badge.fury.io/js/hotel_deals.svg
-[npm-url]: https://npmjs.org/package/hotel_deals
-[travis-image]: https://travis-ci.org//hotel_deals.svg?branch=master
-[travis-url]: https://travis-ci.org//hotel_deals
-[daviddm-image]: https://david-dm.org//hotel_deals.svg?theme=shields.io
-[daviddm-url]: https://david-dm.org//hotel_deals
+1. `npm install`
+2. `gulp build`
+3. `NODE_ENV=production node server/index.js`
+4. Go to localhost:3000
