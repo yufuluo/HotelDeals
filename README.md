@@ -1,6 +1,5 @@
-# hotel_deals 
+# Hotel Deals
 An app that helps you to find better deals for your booked rooms
-Implemented by Qijun Liu
 
 ## Installation
 
