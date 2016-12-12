@@ -1,5 +1,13 @@
 # Hotel Deals
+
 An app that helps you to find better deals for your booked rooms
+
+# Prerequisite
+
+```
+"node": "^6.x.x"
+"npm": "^3.x.x"
+```
 
 # Development
 

@@ -20,9 +20,9 @@
     "type": "git",
     "url": "/hotel_deals"
   },
-  "license": "Apache-2.0",
+  "license": "UNLICENSED",
   "engines": {
-    "node": "^4.x.x || ^6.x.x",
+    "node": "^6.x.x",
     "npm": ">= 3.x.x"
   },
   "scripts": {
