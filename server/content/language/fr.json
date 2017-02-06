@@ -19,5 +19,6 @@
   "selected": "Vous avez sélectionné l'offre (s) suivante (s)",
   "noOffer": "Félicitations à vous! Vous avez déjà la meilleure offre! Nous n'avons aucune offre pour vous en ce moment :)",
   "noOffer2": "Veuillez cliquer sur \"Confirmer\" pour voir la confirmation de votre chambre.",
-  "noSelected": "Vous n'avez sélectionné aucune offre."
+  "noSelected": "Vous n'avez sélectionné aucune offre.",
+  "back": "Arrière"
 }

@@ -19,5 +19,6 @@
   "selected": "Sie haben folgendes Angebot ausgewählt",
   "noOffer": "Herzliche Glückwünsche! Sie haben bereits das beste Angebot! Wir haben momentan kein Angebot für Sie :)",
   "noOffer2": "Bitte klicken Sie auf \"Bestätigen\", um Ihre Zimmerbestätigung anzuzeigen.",
-  "noSelected": "Sie haben kein Angebot ausgewählt."
+  "noSelected": "Sie haben kein Angebot ausgewählt.",
+  "back": "Zurück"
 }

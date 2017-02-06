@@ -19,5 +19,6 @@
   "selected": "You have selected the following offer(s)",
   "noOffer": "Congratulations! You already have the best deal! We do not have any offer for you right now :)",
   "noOffer2": "Please click \"Confirm\" to view your room confirmation.",
-  "noSelected": "You have not selected any offer."
+  "noSelected": "You have not selected any offer.",
+  "back": "Back"
 }

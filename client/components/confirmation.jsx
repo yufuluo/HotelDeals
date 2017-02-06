@@ -1,7 +1,12 @@
 import React from "react";
+import { browserHistory } from "react-router";
 import { connect } from "react-redux";
 
 class Confirmation extends React.Component {
+
+  handleBack(event) {
+    browserHistory.push("/home");
+  }
 
   _renderChosen(){
     return(
@@ -31,6 +36,7 @@ class Confirmation extends React.Component {
         <p className="desc"><span className="bold">{content[this.props.language].room}:</span> {this.props.room}</p>
         <p className="desc"><span className="bold">{content[this.props.language].selected}:</span></p>
         {(this.props.chosen.length > 0) ? this._renderChosen() : this._renderNoChosen()}
+        <button type="button" onClick={this.handleBack.bind(this)}>{content[this.props.language].back}!</button>
       </div>
     );
   }
