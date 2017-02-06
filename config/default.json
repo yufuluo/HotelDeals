@@ -13,6 +13,7 @@
       "module": "./server/plugins/webapp",
       "options": {
         "pageTitle": "Kuma-best hotel deals",
+        "serverSideRendering": false,
         "paths": {
           "/{args*}": {
             "content": {
