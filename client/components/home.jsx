@@ -91,7 +91,7 @@ class Home extends React.Component {
     }).then((res) => {
       return res.json();
     }).then((data) => {
-      console.log(data);
+      // console.log(data);
       dispatch({type: "UPDATE_DATA", data});
       browserHistory.push("/confirmation");
     })

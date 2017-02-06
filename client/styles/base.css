@@ -25,6 +25,14 @@ h2{
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 }
 
+:global(.header_img_right) {
+  display: inline-block;
+  float:right;
+  height: 50px;
+  width: 50px;
+  margin: 20px 20px 20px 0;
+};
+
 :global(.invalid_input) {
   border-color: #ee1111;
 }
