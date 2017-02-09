@@ -13,7 +13,7 @@ class Header extends React.Component {
           <img className="logo" src={logo}/>
           <img className="slogan" src={kuma}/>
           <a href="https://www.linkedin.com/in/qijun-kay-liu-9283ba34/"><img className="header_img_right" src={linkedin} alt="linkedin"/></a>
-          <a href="https://www.linkedin.com/in/qijun-kay-liu-9283ba34/"><img className="header_img_right" src={face} alt="personal page"/></a>
+          <a href="https://qijunliu7.com/"><img className="header_img_right" src={face} alt="personal page"/></a>
           <h2 className="slogan">We Find the BEST Hotel Deals for You</h2>
         </div>
         <div className="content">
